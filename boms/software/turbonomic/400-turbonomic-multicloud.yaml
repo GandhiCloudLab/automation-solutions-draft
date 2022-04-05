@@ -1,0 +1,24 @@
+apiVersion: cloud.ibm.com/v1alpha1
+kind: BillOfMaterial
+metadata:
+  name: 400-gitops-turbonomic-multicloud
+  labels:
+    code: '400'
+  annotations:
+    displayName: Turbonomic on OpenShift - Multi Cloud
+    description: GitOps deployment of Turbonomic on Multi Cloud environments AWS, Azure and IBM Cloud
+spec:
+  modules:
+
+    # Create the GitOps Repo
+    - name: gitops-repo
+
+    # Create Name Space for Turbonomic
+    - name: gitops-namespace
+      variables:
+        - name: name
+          value: turbonomic
+
+    # Define Turbonomic GitOps resources for OpenShift GitOps to install
+    - name: gitops-ocp-turbonomic
+

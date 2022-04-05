@@ -1,0 +1,22 @@
+apiVersion: cloud.ibm.com/v1alpha1
+kind: BillOfMaterial
+metadata:
+  name: 700-cp-waiops-aimgr
+spec:
+  modules:
+    - name: ocp-login
+    - name: gitops-cp-catalogs-waiops-aimgr
+    - name: olm
+    - name: sealed-secret-cert
+    - name: gitops-repo
+    - name: argocd-bootstrap
+    - name: gitops-console-link-job
+
+    - name: gitops-cp-waiops-aimgr
+      variables:
+        - name: namespace
+          value: cp4waiops
+        - name: storageclass
+          value: portworx-rwx-gp-sc
+        - name: storageClassLargeBlock
+          value: portworx-rwx-gp-sc

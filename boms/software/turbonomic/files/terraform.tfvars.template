@@ -1,0 +1,25 @@
+########################################################
+# Name: Turbonomic Terraform Variable File
+# Desc: Initial input variables to support installation of Turbonomic into the cloud provider of your choice
+########################################################
+
+## gitops-ocp-turbonomic_storage_class_name: Name of the block storage class to use - if multizone deployment then waitforfirstconsumer must be set on storageclass binding mode
+# Storage Class for Azure
+gitops-ocp-turbonomic_storage_class_name="managed-premium"
+# Storage Class for AWS
+#gitops-ocp-turbonomic_storage_class_name="gp2"
+
+## gitops_repo_host: The host for the git repository.
+gitops_repo_host="github.com"
+
+## gitops_repo_type: The type of the hosted git repository (github or gitlab).
+gitops_repo_type="github"
+
+## gitops_repo_org: The org/group where the git repository exists/will be provisioned.
+gitops_repo_org="<your git org username - most likely your username>"
+
+## gitops_repo_repo: The short name of the repository (i.e. the part after the org/group name)
+gitops_repo_repo="<repo name to create for git ops configuration>-suffix-00X"
+
+## server_url: The url for the OpenShift api
+server_url="<openshift target server url>"
